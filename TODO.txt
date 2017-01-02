@@ -1,0 +1,10 @@
+TODO
+
+Change some fonts
+Add media queries for screens smaller than 768px
+To Use or Not to Use: jQuery - that is the question
+
+Hookup a weather api
+  netNinja has the tute for doing api (ajax) in vanilla js
+
+  

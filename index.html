@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>freeCodeCamp Weather App</title>
-    <!-- Bootstrap CSS-->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
-    <!--if lt IE 9
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>freeCodeCamp Local Weather App</title>
+  <!-- Bootstrap CSS-->
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+  <!--if lt IE 9
     script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
     script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     -->
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <div class="page-header">
-          <h1 id="app-title" class="text-center">freeCodeCamp Weather App</h1>
-        </div>
-        <div class="row">
-          <div class="col-xs-offset-2 col-xs-9">
-            <h3>Local weather for Leander, TX</h3>
-            <p>Sunday 6:00PM</p>
-            <p class="temperature">61° F <span class="weather-icon"><img src="./images/mostly-cloudy.jpg" alt="Weather Dependent icon"></span></p>
-          </div>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="app-title" class="well rounded text-center">
+          <h1>freeCode Camp
+            <br>Local Weather App
+            <br>75F
+          </h1>
         </div>
       </div>
     </div>
-    <!-- jQuery-->
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JavaScript-->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div id="app-details" class="well rounded">
+        <p id="time-of-day">Good Afternoon</p>
+        <p id="location">Leander, TX</p>
+        <p id="weather-1">Sky is clear</p>
+        <p id="windspeed">Windspeed 7.67 knotts</p>
+      </div>
+    </div>
+  </div>
+  <footer class="social text-center">
+    <p>Made with &hearts; by Alex Maday &copy;2016</p>
+    <ul>
+      <li><a href="http://github.com/alexmaday"><img class="social-images" src="images/social-github.png" alt=""></a></li>
+      <li><a href="http://freecodecamp.com/alexmaday"><img class="social-images" src="images/social-fcc.png" alt=""></a></li>
+      <li><a href="http://twitter.com/alexmaday"><img class="social-images" src="images/social-twitter.png" alt=""></a></li>
+    </ul>
+  </footer>
+  <!-- jQuery-->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap JavaScript-->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
