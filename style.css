@@ -1,0 +1,13 @@
+body .jumbotron {
+  margin-top: 3rem;
+  background: url('../images/lightning-cloud.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: whitesmoke;
+}
+.page-header h1 {
+  
+}
+#app-title {
+  text-shadow: 1px 1px 2px #e1e0e8;
+}
