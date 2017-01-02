@@ -2,7 +2,7 @@ body {
   font-size: 10px;
   margin-top: 3rem;
   /*  change background: programatically */
-  background: url('../backgrounds/80.jpg') no-repeat;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/435834/00.jpg') no-repeat;
   background-position: center;
   background-size: cover;
   color: white;
@@ -16,9 +16,13 @@ body {
 }
 
 .well {
+  transition: all 0.4s ease;
   background-color: rgba(0, 0, 0, 0.38);
   text-shadow: 1px 1px 2px #e1e0e8;
   border: none;
+}
+.well:hover {
+  background-color: rgba(0, 0, 0, 0.58);
 }
 
 #app-title {

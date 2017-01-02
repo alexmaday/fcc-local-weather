@@ -7,4 +7,14 @@ To Use or Not to Use: jQuery - that is the question
 Hookup a weather api
   netNinja has the tute for doing api (ajax) in vanilla js
 
-  
+
+Animation
+  any hover effects?
+  any transitions
+  any user actions (yes, clickable temperature scale)
+    
+  what animates? how and when?
+    load time?
+    on hover
+    on click
+    dependent on device? desktop or mobile?
