@@ -4,6 +4,9 @@ Change some fonts
 Add media queries for screens smaller than 768px
 To Use or Not to Use: jQuery - that is the question
 
+Am I really using bootstrap?
+if im using bootstrap, then yes, its already a dependency 
+
 Hookup a weather api
   netNinja has the tute for doing api (ajax) in vanilla js
 
