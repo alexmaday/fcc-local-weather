@@ -5,27 +5,35 @@ $(document).ready( function() {
 
   // MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation
 
-  function getGeo() {
+  // function getGeo() {
   
-    if (!navigator.geolocation) {
-      console.log("Geolocation either not supported or disallowed.");
-    }
+  //   if (!navigator.geolocation) {
+  //     console.log("Geolocation either not supported or disallowed.");
+  //     console.log("Use alternate location method");
+  //   }
 
-    function sucess(position, error) {
-      var latitude = position.coords.latitude;
-      var longitude = position.coords.longitude;
+  //   function sucess(position) {
+  //     crd = position.coords;
+  //     console.log("Inside success:", crd.latitude, crd.longitude);
+  //   }
 
-      console.log(latitude, longitude);
-      
-    }
+  //   function error() {
+  //     console.log("unable to retrieve your location");
+  //   }
+  //   navigator.geolocation.getCurrentPosition(sucess, error);
 
-    function error() {
-      console.log("unable to retrieve your location");
-    }
+  // }
+  // var crd = {};
 
-    navigator.geolocation.getCurrentPosition(sucess, error);
-  }
-  getGeo();
+  // getGeo();
+
+  // no getGeo wrapper function
+
+  var crd = {};
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    crd = pos.coords;
+  })
+  console.log("After getGeo call: ", crd.latitude, crd.longitude);
 
 });
 
