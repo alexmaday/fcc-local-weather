@@ -1,40 +1,25 @@
-// jQuery ready state
-$(document).ready( function() {
+var coordinates = {};
 
-  // First things first, we have to get user's location
 
-  // MDN: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation
+$(document).ready(function() {
+    // wrapper for navigatorgeolocation.getCurrentPosition
+    function getLocation() {
+        if (!navigator.geolocation) {
+            console.log("Geolocation unavailable");
+        }
+        navigator.geolocation.getCurrentPosition(function(pos) { 
+            crd = pos.coords; 
+        });
+    }
 
-  // function getGeo() {
-  
-  //   if (!navigator.geolocation) {
-  //     console.log("Geolocation either not supported or disallowed.");
-  //     console.log("Use alternate location method");
-  //   }
-
-  //   function sucess(position) {
-  //     crd = position.coords;
-  //     console.log("Inside success:", crd.latitude, crd.longitude);
-  //   }
-
-  //   function error() {
-  //     console.log("unable to retrieve your location");
-  //   }
-  //   navigator.geolocation.getCurrentPosition(sucess, error);
-
-  // }
-  // var crd = {};
-
-  // getGeo();
-
-  // no getGeo wrapper function
-
-  var crd = {};
-  navigator.geolocation.getCurrentPosition(function(pos) {
-    crd = pos.coords;
-  })
-  console.log("After getGeo call: ", crd.latitude, crd.longitude);
-
+    function getWeatherData(coordinates) {
+        var opw = "http://api.openweathermap.org/data/2.5/weather?id=2172797?lat=";
+        opw += String(Math.floor(coordinates.latitude)) + "&lon=" + String(Math.floor(coordinates.longitude));
+        $.get(opw, updatePage(data))
+    }
+    
+    function updatePage(weatherData) {
+        $("#temperature").text(data.main.temp);
+    }
+    getLocation();
 });
-
-
