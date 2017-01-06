@@ -83,3 +83,6 @@ body {
   text-shadow: 2px 2px 2px #e1e0e8;
   font-weight: bolder;
 }
+#weather-desc {
+  text-transform: capitalize;
+}

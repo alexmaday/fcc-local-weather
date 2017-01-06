@@ -72,7 +72,8 @@ window.onload = function() {
         document.getElementById("time-of-day").innerHTML = greeting;
         document.getElementById("city").innerHTML = data.name;
         document.getElementById('country').innerHTML = ipinfo.country;
-        
+        document.getElementById('weather-desc').innerHTML = data.weather[0].description;
+        document.getElementById('windspeed').innerHTML = data.wind.speed + " knotts";
         registerUnitsChange();
     }
     function getCurrentUnits() {
