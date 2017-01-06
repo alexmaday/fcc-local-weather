@@ -1,10 +1,7 @@
 body {
   font-size: 10px;
   margin-top: 3rem;
-  /*  change background: programatically */
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/435834/00.jpg') no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: #3E92F0;
   color: white;
   height: 100vh;
   font-family: 'saxMono';
@@ -73,9 +70,6 @@ body {
 }
 #units {
   font-style: italic;
-  -webkit-transition: all duration timing-function delay;
-  -moz-transition: all duration timing-function delay;
-  transition: all duration timing-function delay;
   color: white;
   text-decoration: none;
 }
@@ -85,4 +79,10 @@ body {
 }
 #weather-desc {
   text-transform: capitalize;
+}
+/* programatic background changes */
+.temp-20 {
+  background: url("https://dl.dropboxusercontent.com/u/5729928/images/local-weather/30.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
 }

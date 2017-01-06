@@ -51,8 +51,9 @@ window.onload = function() {
     }
 
     function updatePageData() {
-
-        document.getElementById('temperature').innerHTML = Math.floor(data.main.temp);
+        var temp = Math.floor(data.main.temp);
+        document.getElementById('temperature').innerHTML = temp;
+        updateBackground(temp);
         document.getElementById('units').innerHTML = getCurrentUnits();
         var iconUrl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
         document.getElementById("icon").setAttribute("src", iconUrl);
@@ -99,5 +100,19 @@ window.onload = function() {
             }
 
         });
+    }
+
+    function updateBackground(temp) {
+       /* var url = 'url("https://dl.dropboxusercontent.com/u/5729928/images/local-weather/';
+        if (temp >= 100) url += '"100.jpg") no-repeat';
+        else if (temp >10 && temp < 20) {
+          url += '20.jpg")';
+        }
+        else {
+            url += String(Math.floor(temp /= 10)) + '0.jpg") no-repeat';
+        }
+        document.getElementsByTagName('body')[0].style.background = url;*/
+        var body = document.getElementsByTagName('body')[0];
+        body.classList.add("temp-20");
     }
 };
