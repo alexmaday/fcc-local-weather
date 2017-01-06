@@ -1,21 +1,33 @@
 window.onload = function() {
     var lat, lon;
-    var endpoint = "http://api.openweathermap.org/data/2.5/weather?&appid=c28cb26ddedc5488a85c4525c702c2b4";
     var units = "imperial"; 
     var data;
+    var ipinfo;
+    
+    (function getLocation() {
+        var http = new XMLHttpRequest();
+        http.onreadystatechange = function() {
+            if (http.readyState === XMLHttpRequest.DONE) {
+                    if (http.status === 200) {
+                        ipinfo = JSON.parse(http.responseText);
+                        gotLocation();
+                    } else {
+                        console.log("Something else happened: 404 or 500");
+                        console.log("HTTP Status: " + http.status);
+                    }
+                }
+        }
+        http.open("GET", "http://ipinfo.io/json");
+        http.send();
+    }());
 
-    // get users location
-    navigator.geolocation.getCurrentPosition(gotLocation, error);
 
-    function gotLocation(position) {
-        lat = position.coords.latitude.toFixed(2);
-        lon = position.coords.longitude.toFixed(2);
+    function gotLocation() {
+        var coordinates = ipinfo.loc.split(',');
+        lat = coordinates[0];
+        lon = coordinates[1];
         getWeatherData();
     }    
-
-    function error(err) {
-        console.log(err);
-    }
 
     function getWeatherData() {
         var http = new XMLHttpRequest();
@@ -32,7 +44,7 @@ window.onload = function() {
             } 
         };
 
-        // build the actual ajax query string
+        var endpoint = "http://api.openweathermap.org/data/2.5/weather?&appid=c28cb26ddedc5488a85c4525c702c2b4";
         var url = endpoint + "&lat=" + lat + "&lon=" + lon + "&units=" + units;
         http.open("GET", url);
         http.send();
@@ -58,11 +70,11 @@ window.onload = function() {
             greeting = "Good Evening";
         }
 
-        elGreeting = document.getElementById("time-of-day");
-        elGreeting.innerHTML = greeting;
+        elGreeting = document.getElementById("time-of-day").innerHTML = greeting;
+        // elGreeting.innerHTML = greeting;
 
-        var city = data.name;
-        document.getElementById("city").innerHTML = city;
+        document.getElementById("city").innerHTML = data.name;
+        document.getElementById('country').innerHTML = ipinfo.country;
     }
     
 };
