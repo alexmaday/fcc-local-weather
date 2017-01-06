@@ -1,6 +1,4 @@
-var coordinates = {};
-
-
+var coordinates;
 $(document).ready(function() {
     // wrapper for navigatorgeolocation.getCurrentPosition
     function getLocation() {
