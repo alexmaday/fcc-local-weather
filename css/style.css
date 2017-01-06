@@ -71,3 +71,15 @@ body {
 .social-images {
   width: 55px;
 }
+#units {
+  font-style: italic;
+  -webkit-transition: all duration timing-function delay;
+  -moz-transition: all duration timing-function delay;
+  transition: all duration timing-function delay;
+  color: white;
+  text-decoration: none;
+}
+#units:hover {
+  text-shadow: 2px 2px 2px #e1e0e8;
+  font-weight: bolder;
+}

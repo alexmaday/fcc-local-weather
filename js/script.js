@@ -52,10 +52,8 @@ window.onload = function() {
 
     function updatePageData() {
 
-        var temp = Math.floor(data.main.temp);
-        var elTemp = document.getElementById('temperature');
-
-        elTemp.innerHTML = temp + "&deg;";
+        document.getElementById('temperature').innerHTML = Math.floor(data.main.temp);
+        document.getElementById('units').innerHTML = getCurrentUnits();
 
         // setup the greeting
         var date = new Date();
@@ -69,12 +67,34 @@ window.onload = function() {
         } else {
             greeting = "Good Evening";
         }
-
-        elGreeting = document.getElementById("time-of-day").innerHTML = greeting;
-        // elGreeting.innerHTML = greeting;
-
+        document.getElementById("time-of-day").innerHTML = greeting;
         document.getElementById("city").innerHTML = data.name;
         document.getElementById('country').innerHTML = ipinfo.country;
+        
+        registerUnitsChange();
+    }
+    function getCurrentUnits() {
+        console.log("getUnits(): units -> " + units);
+        if (units == "imperial") return 'F'; 
+        else return 'C';
     }
     
+    function registerUnitsChange() {
+        elUnits = document.getElementById('units');
+        elUnits.addEventListener("click", function() {
+            if (units == "imperial") {
+                // debugger;
+                var F = data.main.temp;
+                var C = (F - 32) / (9 / 5);
+                document.getElementById('temperature').innerHTML = Math.floor(C);
+                units = "celsius";
+                elUnits.innerHTML = "C";
+            } else {
+                document.getElementById('temperature').innerHTML = Math.floor(data.main.temp);
+                units = "imperial";
+                elUnits.innerHTML = "F";
+            }
+
+        });
+    }
 };
