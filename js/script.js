@@ -54,6 +54,8 @@ window.onload = function() {
 
         document.getElementById('temperature').innerHTML = Math.floor(data.main.temp);
         document.getElementById('units').innerHTML = getCurrentUnits();
+        var iconUrl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+        document.getElementById("icon").setAttribute("src", iconUrl);
 
         // setup the greeting
         var date = new Date();
