@@ -1,5 +1,4 @@
 body {
-  font-size: 10px;
   margin-top: 3rem;
   background: #3E92F0;
   color: white;
@@ -7,60 +6,42 @@ body {
   overflow: hidden;
   font-family: 'Titillium Web', sans-serif;
 }
-
-.rounded {
-  border-radius: 20px;
+h1>small {
+  color: white;
 }
-
-.well {
+.jumbotron, .well {
   transition: all 0.4s ease;
   background-color: rgba(0, 0, 0, 0.38);
   text-shadow: 1px 1px 2px #e1e0e8;
   border: none;
 }
 
-.well:hover {
+.jumbotron:hover, .well:hover {
   background-color: rgba(0, 0, 0, 0.58);
 }
-
-#app-title {
-  margin: 0 auto;
-  width: 700px;
-  height: 290px;
-  position: relative;
-}
-
 #app-title h1 {
   font-family: 'Alfa Slab One', cursive;
-  font-size: 6.3rem;
-}
 
-#app-details {
-  position: fixed;
-  bottom: 110px;
-  left: 30px;
-  width: 450px;
-  height: 250px;
 }
 
 #app-details p {
-  font-size: 3rem;
+/*   font-size: 2rem; */
 }
 
 #title-details {
   font-family: Abel, sans-serif;
 }
-
+.footer {
+  position: relative;
+ 
+  
+}
 .social {
   position: fixed;
+  right: 50%;
+  transform: translatex(50%);
   bottom: 0px;
-  /*left: 50vw;*/
-  margin: 0 auto;
-  display: inline-block;
-  font-size: 1.5rem;
-  width: 100vw;
 }
-
 .social ul {
   padding: 0;
   margin-bottom: 10px;
@@ -68,11 +49,11 @@ body {
 
 .social li {
   list-style: none;
-  display: inline;
+  display: inline-block;
 }
 
 .social-images {
-  width: 55px;
+  width: 45px;
 }
 
 #units {
@@ -88,37 +69,4 @@ body {
 
 #weather-desc {
   text-transform: capitalize;
-}
-
-
-/* programatic background changes */
-
-.temp-20 {
-  /*   background: url("https://dl.dropboxusercontent.com/u/5729928/images/local-weather/30.jpg") no-repeat; */
-  background-position: center;
-  background-size: cover;
-}
-
-@media screen and (max-width: 768px) {
-  #app-title {
-    margin: 0 auto;
-    width: 500px;
-    height: 225px;
-/*     background: red; */
-    /*   position: relative; */
-  }
-  #app-title h1 {
-     font-size: 4.3rem;
-  }
-  #app-details {
-    position: fixed;
-    bottom: 110px;
-/*     left: 30px; */
-    margin: 0 auto;
-    width: 450px;
-    height: 190px;
-  }
-  #app-details p {
-    font-size: 2.3em;
-  }
 }

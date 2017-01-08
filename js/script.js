@@ -24,6 +24,7 @@ window.onload = function() {
 
     function gotLocation() {
         var coordinates = ipinfo.loc.split(',');
+        // if (ipinfo.country != "US") units = "metric";
         lat = coordinates[0];
         lon = coordinates[1];
         getWeatherData();
@@ -73,21 +74,20 @@ window.onload = function() {
         document.getElementById("time-of-day").innerHTML = greeting;
         document.getElementById("city").innerHTML = data.name;
         document.getElementById('country').innerHTML = ipinfo.country;
-        document.getElementById('weather-desc').innerHTML = data.weather[0].description;
-        document.getElementById('windspeed').innerHTML = data.wind.speed + " knotts";
+        document.getElementById('weather-desc').text = data.weather[0].description;
+        document.getElementById('windspeed').text = data.wind.speed + " knotts";
         registerUnitsChange();
     }
     function getCurrentUnits() {
-        console.log("getUnits(): units -> " + units);
         if (units == "imperial") return 'F'; 
         else return 'C';
     }
     
     function registerUnitsChange() {
         elUnits = document.getElementById('units');
+      debugger;
         elUnits.addEventListener("click", function() {
             if (units == "imperial") {
-                // debugger;
                 var F = data.main.temp;
                 var C = (F - 32) / (9 / 5);
                 document.getElementById('temperature').innerHTML = Math.floor(C);
@@ -103,16 +103,17 @@ window.onload = function() {
     }
 
     function updateBackground(temp) {
-       /* var url = 'url("https://dl.dropboxusercontent.com/u/5729928/images/local-weather/';
+        var url = 'url("https://dl.dropboxusercontent.com/u/5729928/images/local-weather/';
         if (temp >= 100) url += '"100.jpg") no-repeat';
         else if (temp >10 && temp < 20) {
-          url += '20.jpg")';
+          url += '2.jpg")';
         }
         else {
-            url += String(Math.floor(temp /= 10)) + '0.jpg") no-repeat';
+            url += String(Math.floor(temp /= 10)) + '.jpg") no-repeat center/cover';
         }
-        document.getElementsByTagName('body')[0].style.background = url;*/
-        var body = document.getElementsByTagName('body')[0];
-        body.classList.add("temp-20");
+        document.getElementsByTagName('body')[0].style.background = url;
+      
+        // var body = document.getElementsByTagName('body')[0];
+        // body.classList.add("temp-20");
     }
 };

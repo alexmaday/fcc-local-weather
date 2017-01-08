@@ -1,39 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>freeCodeCamp - Local Weather App</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
 <body>
-<div class="container-fluid">
+  <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div id="app-title" class="well rounded text-center">
-          <h1>freeCode Camp
-            <p>Local Weather App</p>
-          <p id="title-details"><span id="temperature">--</span>&deg;<a href="#" id="units" title="Click to change unit system"></a>
-              <img id="icon"></p>
-          </h1>
+      <div class="col-sm-offset-2 col-sm-8 col-xs-12 text-center">
+        <div class="jumbotron">
+          <div id="app-title">
+            <h1>freeCode Camp
+              <small>Local Weather App</small>
+            </h1>
+            <p class="lead"><span id="time-of-day"></span> <span id="city"></span>, <span id="country"></span>  is <span id="temperature">--</span>&deg;<a href="#" id="units" title="Click to change unit system"></a> <img src="" alt="Weather icon" id="icon" /></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div id="app-details" class="well rounded">
-        <p id="time-of-day">Good Afternoon</p>
-        <p><span id="city">Leander</span>, <span id="country">US</span></p>
-        <p id="weather-desc"></p>
-        <p id="windspeed">Windspeed 7.67 knotts</p>
+    <div class="row footer">
+
+          <div class="social text-center">
+            <p>Made with &hearts; and ☕ by Alex Maday &copy;2016</p>
+            <ul>
+              <li>
+                <a href="http://github.com/alexmaday" target="_blank">
+                  <img class="social-images" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/435834/social-github.png" alt=""></a>
+              </li>
+              <li>
+                <a href="http://freecodecamp.com/alexmaday" target="_blank"><img class="social-images" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/435834/social-fcc.png" alt=""></a>
+              </li>
+              <li>
+                <a href="http://twitter.com/alexmaday" target="_blank">
+                  <img class="social-images" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/435834/social-twitter.png" alt=""></a>
+              </li>
+            </ul>
+          </div>
       </div>
     </div>
-  </div>
-  <footer class="social text-center">
-    <p>Made with &hearts; and ☕ by Alex Maday &copy;2016</p>
-    <ul>
-      <li>
-        <a href="http://github.com/alexmaday"><img class="social-images" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/435834/social-github.png" alt=""></a>
-      </li>
-      <li>
-        <a href="http://freecodecamp.com/alexmaday"><img class="social-images" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/435834/social-fcc.png" alt=""></a>
-      </li>
-      <li>
-        <a href="http://twitter.com/alexmaday"><img class="social-images" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/435834/social-twitter.png" alt=""></a>
-      </li>
-    </ul>
-  </footer>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
+</html>
