@@ -18,6 +18,9 @@ I have also been considering:
 * https://www.wunderground.com/weather/api/d/docs?MR=1
 * and https://developer.yahoo.com/weather/#js=
 
+#### In the end, I stuck with openweather.
+
 ### Other APIs
 
-Geolocation, if not provided by the weather API, will need to be gathered through either the user's browser or using something like https://www.iplocation.net/
+Geolocation, if not provided by the weather API, will need to be gathered through either the user's browser or using something like ~~https://www.iplocation.net/~~
+https://ipinfo.io
