@@ -6,6 +6,7 @@ body {
   overflow: hidden;
   font-family: 'Titillium Web', sans-serif;
 }
+
 h1>small {
   color: white;
 }
@@ -70,3 +71,4 @@ h1>small {
 #weather-desc {
   text-transform: capitalize;
 }
+

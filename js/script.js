@@ -37,6 +37,7 @@ window.onload = function() {
                 if (http.status === 200) {
                     data = JSON.parse(http.responseText);
                     // put it on the page
+                    console.log(data);
                     updatePageData();
                 } else {
                     console.log("Something else happened: 404 or 500");
@@ -74,8 +75,8 @@ window.onload = function() {
         document.getElementById("time-of-day").innerHTML = greeting;
         document.getElementById("city").innerHTML = data.name;
         document.getElementById('country').innerHTML = ipinfo.country;
-        document.getElementById('weather-desc').text = data.weather[0].description;
-        document.getElementById('windspeed').text = data.wind.speed + " knotts";
+        // document.getElementById('weather-desc').text = data.weather[0].description;      
+      // document.getElementById('windspeed').innerHTML = data.wind.speed + " knotts";
         registerUnitsChange();
     }
     function getCurrentUnits() {
